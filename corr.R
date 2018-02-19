@@ -31,3 +31,11 @@ corr <- function(directory, threshold = 0) {
   tcorrs <- unlist(tcorrs[!sapply(tcorrs, is.null)]) #removes all NULLs
   return (tcorrs)
 }
+
+#script tests
+cr <- corr("specdata")                
+cr <- sort(cr)                
+set.seed(868)                
+out <- round(cr[sample(length(cr), 5)], 4)
+print(out)
+
